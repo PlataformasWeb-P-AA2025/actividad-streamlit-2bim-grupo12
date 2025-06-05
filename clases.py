@@ -26,7 +26,6 @@ class Publicacion(Base):
     id = Column(Integer, primary_key=True)
     publicacion = Column(String(250))  # para guardar el texto de la publicación
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
-
     usuario = relationship("Usuario", back_populates="publicaciones")
     reacciones = relationship("Reaccion", back_populates="publicacion")
 
